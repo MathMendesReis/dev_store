@@ -12,20 +12,20 @@ export default function Home() {
           <span className='flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold'>R$129,00</span>
         </div>
       </Link>
-        <Link href={'/'} className='group relative col-span-3  row-span-3 rounded-lg bg-zinc-900 overflow-hidden'>
-          <Image src={'/moletom-ai-side.png'} alt='' width={450} height={450} quality={100} className='group-hover:scale-105 transition-transform duration-500' />
+      <Link href={'/'} className='group relative col-span-3  row-span-3 rounded-lg bg-zinc-900 overflow-hidden'>
+        <Image src={'/moletom-ai-side.png'} alt='' width={450} height={450} quality={100} className='group-hover:scale-105 transition-transform duration-500' />
         <div className=' absolute bottom-28 right-2 h-12 flex items-center gap-2 max-w-[280px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5'>
           <span className='text-sm truncate'>Moleton ia side</span>
           <span className='flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold'>R$129,00</span>
         </div>
-        </Link>
-        <Link href={'/'} className='group relative col-span-3  row-span-3 rounded-lg bg-zinc-900 overflow-hidden'>
-          <Image src={'/moletom-ai-side.png'} alt='' width={450} height={450} quality={100} className='group-hover:scale-105 transition-transform duration-500' />
+      </Link>
+      <Link href={'/'} className='group relative col-span-3  row-span-3 rounded-lg bg-zinc-900 overflow-hidden'>
+        <Image src={'/moletom-ai-side.png'} alt='' width={450} height={450} quality={100} className='group-hover:scale-105 transition-transform duration-500' />
         <div className=' absolute bottom-20 right-2 h-12 flex items-center gap-2 max-w-[280px] rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5'>
           <span className='text-sm truncate'>Moleton ia side</span>
           <span className='flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold'>R$129,00</span>
         </div>
-        </Link>
+      </Link>
     </div>
   )
 }
