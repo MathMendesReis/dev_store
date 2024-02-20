@@ -16,7 +16,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} px-4`}>
+        <header className='mx-auto mb-5 mt-9 flex min-h-11 max-w-[1440px] flex-col items-center justify-start gap-5 bg-red-600 py-2 min-[400px]:flex-row'>
+          <h1 className=''>maristore</h1>
+          <div className='max-w-80'>
+            <input
+              type='text'
+              name=''
+              id=''
+              className='w-full'
+            />
+          </div>
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
   )
 }
