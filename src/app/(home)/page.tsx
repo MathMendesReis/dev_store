@@ -16,7 +16,10 @@ export default async function Page() {
     <>
       <main className=''>
         <ul className='grid w-full grid-cols-4 grid-rows-2 gap-5 max-[1000px]:hidden'>
-          <HighligthProd data={highligth} />
+          <div className='col-span-3 row-span-2 bg-zinc-900'>
+            <HighligthProd data={highligth} />
+          </div>
+
           <ListProducts data={DataSlice} />
         </ul>
         <div className=' mt-8 w-full overflow-x-auto pb-6 pt-1 '>
