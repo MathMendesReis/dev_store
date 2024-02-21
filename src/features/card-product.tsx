@@ -9,7 +9,7 @@ interface CardProductRootProps {
 function CardProductRoot({ children, className = '' }: CardProductRootProps) {
   return (
     <li
-      className={`group relative flex h-full items-center overflow-hidden rounded-lg border bg-transparent hover:border-blue-600 ${className}`}
+      className={`group relative flex h-full items-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-transparent ${className}`}
     >
       {children}
     </li>
@@ -59,7 +59,7 @@ interface CardProductaNameProps {
   nome: string
 }
 function CardProductName({ nome }: CardProductaNameProps) {
-  return <p className='text-sm'>{nome}</p>
+  return <p className='text-sm text-black dark:text-gray-100'>{nome}</p>
 }
 
 export { CardProductRoot, CardProductImg, CardProductPrice, CardProductName }
