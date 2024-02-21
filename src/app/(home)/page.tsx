@@ -15,12 +15,13 @@ export default async function Page() {
   return (
     <>
       <main className=''>
-        <ul className='grid w-full grid-cols-4 grid-rows-2 gap-5 max-[1000px]:hidden'>
-          <div className='col-span-3 row-span-2 bg-zinc-900'>
+        <ul className='grid grid-cols-3 grid-rows-1 gap-5 max-[1000px]:hidden '>
+          <div className='col-span-2 h-full'>
             <HighligthProd data={highligth} />
           </div>
-
-          <ListProducts data={DataSlice} />
+          <div className='col-span-1 col-start-3 flex h-full min-w-64 flex-col items-center justify-stretch gap-6'>
+            <ListProducts data={DataSlice} />
+          </div>
         </ul>
         <div className=' mt-8 w-full overflow-x-auto pb-6 pt-1 '>
           <ul className='animate-carousel flex gap-4'>

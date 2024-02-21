@@ -4,12 +4,15 @@ import React from 'react'
 
 interface CardProductRootProps {
   children: React.ReactNode
+  className?: string
 }
-function CardProductRoot({ children }: CardProductRootProps) {
+function CardProductRoot({ children, className = '' }: CardProductRootProps) {
   return (
-    <div className='group relative col-span-6 row-span-6 flex items-end justify-center overflow-hidden rounded-lg bg-zinc-900'>
+    <li
+      className={`group relative flex h-full items-center overflow-hidden rounded-lg border bg-transparent hover:border-blue-600 ${className}`}
+    >
       {children}
-    </div>
+    </li>
   )
 }
 
@@ -22,19 +25,18 @@ interface CardProductImgProps {
 function CardProductImg({
   src,
   alt = '',
-  height = 700,
-  width = 700,
+  height = 650,
+  width = 650,
 }: CardProductImgProps) {
   return (
-    <div className=' flex h-full items-end justify-center'>
-      <Image
-        src={src}
-        alt={alt}
-        width={height}
-        height={width}
-        quality={100}
-      />
-    </div>
+    <Image
+      src={src}
+      alt={alt}
+      width={height}
+      height={width}
+      quality={100}
+      className='relative object-contain transition duration-300 ease-in-out group-hover:scale-105'
+    />
   )
 }
 
