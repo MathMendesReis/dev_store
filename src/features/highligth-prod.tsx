@@ -13,10 +13,7 @@ export default function HighligthProd({
   data: { id, nome, preco, url_img },
 }: HighligthProdProps) {
   return (
-    <li
-      className='col-span-3 row-span-2 bg-zinc-900'
-      key={id}
-    >
+    <li key={id}>
       <CardProductRoot>
         <CardProductImg src={url_img} />
         <div className='absolute bottom-[25%] right-[15%] flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-1'>
