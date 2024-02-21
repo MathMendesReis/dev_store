@@ -23,8 +23,8 @@ export default async function Page() {
             <ListProducts data={DataSlice} />
           </div>
         </ul>
-        <div className=' mt-8 w-full overflow-x-auto pb-6 pt-1 '>
-          <ul className='animate-carousel flex gap-4'>
+        <div className=' invisible-scrollbar mt-8 w-full overflow-x-auto pb-6 pt-1'>
+          <ul className='flex animate-carousel gap-4'>
             {data.produtos.map(({ id, nome, preco, url_img }) => (
               <li
                 key={id}
