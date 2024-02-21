@@ -1,6 +1,6 @@
+import { CardProductPrice } from '@/features/card-product'
 import clsx from 'clsx'
 import Image from 'next/image'
-import Label from './label'
 
 export function GridTileImage({
   isInteractive = true,
@@ -19,7 +19,7 @@ export function GridTileImage({
   return (
     <div
       className={clsx(
-        'group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black',
+        'group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-transparent hover:border-blue-600',
         {
           relative: label,
           'border-2 border-blue-600': active,
@@ -38,11 +38,14 @@ export function GridTileImage({
         />
       ) : null}
       {label ? (
-        <Label
-          title={label.title}
-          currencyCode={label.currencyCode}
-          position={label.position}
-        />
+        <>
+          <div className='absolute bottom-10 right-10 flex h-12 max-w-[200px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5'>
+            <span className='truncate text-sm'>{label.title}</span>
+            <span className='flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold'>
+              <CardProductPrice price={label.currencyCode} />
+            </span>
+          </div>
+        </>
       ) : null}
     </div>
   )

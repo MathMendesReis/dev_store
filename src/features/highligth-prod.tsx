@@ -9,20 +9,22 @@ import {
 interface HighligthProdProps {
   data: produto
 }
+
 export default function HighligthProd({
   data: { id, nome, preco, url_img },
 }: HighligthProdProps) {
   return (
-    <li key={id}>
-      <CardProductRoot>
+    <>
+      <CardProductRoot key={id}>
         <CardProductImg src={url_img} />
-        <div className='absolute bottom-[25%] right-[15%] flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-1'>
-          <p>{nome}</p>
-          <button className='rounded-3xl bg-violet-500 px-4 py-1'>
+
+        <div className='absolute bottom-28 right-28 flex h-12 max-w-[280px] items-center gap-2 rounded-full border-2 border-zinc-500 bg-black/60 p-1 pl-5'>
+          <span className='truncate text-sm'>{nome}</span>
+          <span className='flex h-full items-center justify-center rounded-full bg-violet-500 px-4 font-semibold'>
             <CardProductPrice price={preco} />
-          </button>
+          </span>
         </div>
       </CardProductRoot>
-    </li>
+    </>
   )
 }
