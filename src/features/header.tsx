@@ -12,13 +12,13 @@ export default function Header() {
       >
         <h1 className='text-2xl font-extrabold'>maristore</h1>
       </Link>
-      <label className='flex max-w-80 items-center justify-center gap-3 rounded-3xl bg-zinc-900 px-5 py-3'>
+      <label className='flex max-w-80 items-center justify-center gap-3 rounded-3xl bg-white px-5 py-3 dark:bg-zinc-900'>
         <SvgSearch />
         <input
           type='text'
           name=''
           id=''
-          className='w-4/5 bg-transparent outline-none'
+          className='w-4/5 bg-white outline-none dark:bg-transparent'
           placeholder='buscar produto...'
         />
       </label>

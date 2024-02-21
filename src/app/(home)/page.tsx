@@ -2,7 +2,7 @@ import { GridTileImage } from '@/components/ui/tile'
 import HighligthProd from '@/features/highligth-prod'
 import ListProducts from '@/features/list-products'
 import { GetAllProds } from '@/mock/fecth'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 export default async function Page() {
   const data = await GetAllProds()
@@ -16,9 +16,11 @@ export default async function Page() {
     <>
       <main className=''>
         <ul className='grid grid-cols-3 grid-rows-1 gap-5 max-[1000px]:hidden '>
-          <div className='col-span-2 h-full'>
-            <HighligthProd data={highligth} />
-          </div>
+          <Suspense fallback={<p>Loading feed...</p>}>
+            <div className='col-span-2 h-full'>
+              <HighligthProd data={highligth} />
+            </div>
+          </Suspense>
           <div className='col-span-1 col-start-3 flex h-full min-w-64 flex-col items-center justify-stretch gap-6'>
             <ListProducts data={DataSlice} />
           </div>
@@ -47,11 +49,7 @@ export default async function Page() {
           </ul>
         </div>
       </main>
-      <main>
-        {/* <ul className='min-[1000px]:hidden flex flex-col gap-4 items-center justify-center list-none'>
-          <ListProducts data={data.produtos} />
-        </ul> */}
-      </main>
+      <main></main>
     </>
   )
 }
