@@ -4,19 +4,43 @@
       "id": 1,
       "nome": "Camiseta Branca",
       "preco": 29.99,
-      "url_img": "./[patrocinador]do-while22-t-shirt 1.png"
+      "url_img": "/[patrocinador]do-while22-t-shirt 1.png"
     },
     {
       "id": 2,
       "nome": "Calça Jeans",
       "preco": 59.99,
-      "url_img": "./moletom-never-stop-learning 1.png"
+      "url_img": "/moletom-never-stop-learning 1.png"
     },
     {
       "id": 3,
       "nome": "Tênis Esportivo",
       "preco": 79.99,
-      "url_img": "./Moletom.png"
+      "url_img": "/Moletom.png"
+    },
+    {
+      "id": 4,
+      "nome": "Tênis Esportivo",
+      "preco": 79.99,
+      "url_img": "/Moletom.png"
+    },
+    {
+      "id": 5,
+      "nome": "Tênis Esportivo",
+      "preco": 79.99,
+      "url_img": "/Moletom.png"
+    },
+    {
+      "id": 6,
+      "nome": "Tênis Esportivo",
+      "preco": 79.99,
+      "url_img": "/Moletom.png"
+    },
+    {
+      "id": 7,
+      "nome": "Tênis Esportivo",
+      "preco": 79.99,
+      "url_img": "/Moletom.png"
     }
   ]
 }
