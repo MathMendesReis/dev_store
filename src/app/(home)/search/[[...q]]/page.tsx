@@ -19,7 +19,7 @@ export default function Search({ searchParams }: SearchProps) {
       setData(searchData)
     }
     fetchData()
-  }, [query])
+  }, [query, data])
 
   return (
     <div className='flex w-full flex-col gap-4'>
