@@ -1,17 +1,19 @@
 'use client'
 
 import { SvgSearch } from '@/components/icons/search'
-import { FormEvent } from 'react'
+import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 export function SearchForm() {
-  const query = ''
+  const [query, setQuery] = useState<string>('')
   const router = useRouter()
+
   function handleSearch(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
     const data = Object.fromEntries(formData)
-    const query = data.q
+    const query = data.q as string
+    setQuery(() => query)
     router.push(`/search?q=${query}`)
   }
   return (
