@@ -12,7 +12,7 @@ interface SearchProps {
 export default function Search({ searchParams }: SearchProps) {
   const { q: query } = searchParams
   const [data, setData] = useState<produto[]>([])
-
+  console.log('Query recebida:', query)
   useEffect(() => {
     const fetchData = async () => {
       const searchData = await searchProducts(query)
@@ -29,11 +29,6 @@ export default function Search({ searchParams }: SearchProps) {
 
       <div className='grid grid-cols-1 gap-4 min-[964px]:grid-cols-2 min-[1068px]:grid-cols-3'>
         {data.length > 0 && <ListProducts data={data} />}
-        {data.length < 1 && (
-          <div>
-            <p>nenhum produto encontrado</p>
-          </div>
-        )}
       </div>
     </div>
   )
