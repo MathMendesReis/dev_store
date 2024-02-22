@@ -2,6 +2,7 @@ import { GridTileImage } from '@/components/ui/tile'
 import HighligthProd from '@/features/highligth-prod'
 import ListProducts from '@/features/list-products'
 import { GetAllProds } from '@/mock/fecth'
+import Link from 'next/link'
 import React, { Suspense } from 'react'
 
 export default async function Page() {
@@ -10,7 +11,7 @@ export default async function Page() {
     produtos: [highligth, ...rest],
   } = data
 
-  const DataSlice = data.produtos.slice(1, 3)
+  const DataSlice = rest.slice(1, 3)
 
   return (
     <>
@@ -26,30 +27,38 @@ export default async function Page() {
           </div>
         </ul>
         <div className=' invisible-scrollbar mt-8 w-full overflow-x-auto pb-6 pt-1'>
-          <ul className='flex animate-carousel gap-4'>
+          <ul className='flex animate-carousel gap-4 max-[1000px]:hidden'>
             {data.produtos.map(({ id, nome, preco, url_img }) => (
               <li
                 key={id}
                 className='relative aspect-square h-[30vh] max-h-[275px] w-full'
               >
-                <div className='relative h-full w-full '>
-                  <GridTileImage
-                    alt={nome}
-                    label={{
-                      title: nome,
-                      currencyCode: preco,
-                    }}
-                    src={url_img}
-                    fill
-                    sizes='(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw'
-                  />
-                </div>
+                <Link
+                  href={{
+                    pathname: `/product/${id}`,
+                  }}
+                >
+                  <div className='relative h-full w-full max-[1000px]:hidden'>
+                    <GridTileImage
+                      alt={nome}
+                      label={{
+                        title: nome,
+                        currencyCode: preco,
+                      }}
+                      src={url_img}
+                      fill
+                      sizes='(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw'
+                    />
+                  </div>
+                </Link>
               </li>
             ))}
           </ul>
         </div>
+        <div className='grid grid-cols-1 gap-4 min-[999px]:grid-cols-2  min-[1000px]:hidden'>
+          <ListProducts data={data.produtos} />
+        </div>
       </main>
-      <main></main>
     </>
   )
 }
