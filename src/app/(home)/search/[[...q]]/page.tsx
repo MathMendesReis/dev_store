@@ -2,7 +2,7 @@
 import ListProducts from '@/features/list-products'
 import { produto } from '@/mock/fecth'
 import { searchProducts } from '@/mock/search-product'
-import React, { Suspense, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 interface SearchProps {
   searchParams: {
@@ -21,9 +21,6 @@ export default function Search({ searchParams }: SearchProps) {
     fetchData()
   }, [query])
 
-  if (!data) {
-    return <p>Loading feed...</p>
-  }
   return (
     <div className='flex w-full flex-col gap-4'>
       <p className='text-sm'>
@@ -31,9 +28,12 @@ export default function Search({ searchParams }: SearchProps) {
       </p>
 
       <div className='grid grid-cols-1 gap-4 min-[964px]:grid-cols-2 min-[1068px]:grid-cols-3'>
-        <Suspense fallback={<p>Loading feed...</p>}>
-          <ListProducts data={data} />
-        </Suspense>
+        {data.length > 0 && <ListProducts data={data} />}
+        {data.length < 1 && (
+          <div>
+            <p>nenhum produto encontrado</p>
+          </div>
+        )}
       </div>
     </div>
   )
