@@ -22,7 +22,7 @@ export default function Header() {
           placeholder='buscar produto...'
         />
       </label>
-      <div className='flex w-full items-center justify-end'>
+      <div className='flex w-full items-center justify-end max-[1000px]:hidden'>
         <Link
           href={{
             pathname: '/all',

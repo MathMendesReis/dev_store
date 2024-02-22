@@ -4,6 +4,7 @@ export interface produto {
   nome: string
   preco: number
   url_img: string
+  imagens: string[]
 }
 
 interface ResponseFecth {
