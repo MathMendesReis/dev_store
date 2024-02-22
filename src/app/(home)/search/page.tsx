@@ -2,17 +2,14 @@
 import ListProducts from '@/features/list-products'
 import { produto } from '@/mock/fecth'
 import { searchProducts } from '@/mock/search-product'
+import { useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
-interface SearchProps {
-  searchParams: {
-    q: string
-  }
-}
-export default function Search({ searchParams }: SearchProps) {
-  const { q } = searchParams
+export default function Search() {
+  const searchParams = useSearchParams()
+  const q = searchParams.get('q') as string
+
   const [data, setData] = useState<produto[]>([])
-  console.log('Query recebida:', q)
   useEffect(() => {
     const fetchData = async () => {
       const searchData = await searchProducts(q)
@@ -21,6 +18,7 @@ export default function Search({ searchParams }: SearchProps) {
     fetchData()
   }, [q])
 
+  console.log('Query recebida:', q)
   return (
     <div className='flex w-full flex-col gap-4'>
       <p className='text-sm'>
