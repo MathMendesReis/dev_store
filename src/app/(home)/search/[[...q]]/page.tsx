@@ -10,21 +10,21 @@ interface SearchProps {
   }
 }
 export default function Search({ searchParams }: SearchProps) {
-  const { q: query } = searchParams
+  const { q } = searchParams
   const [data, setData] = useState<produto[]>([])
-  console.log('Query recebida:', query)
+  console.log('Query recebida:', q)
   useEffect(() => {
     const fetchData = async () => {
-      const searchData = await searchProducts(query)
+      const searchData = await searchProducts(q)
       setData(searchData)
     }
     fetchData()
-  }, [query])
+  }, [q])
 
   return (
     <div className='flex w-full flex-col gap-4'>
       <p className='text-sm'>
-        Resultados para: <span className='font-semibold'>{query}</span>
+        Resultados para: <span className='font-semibold'>{q}</span>
       </p>
 
       <div className='grid grid-cols-1 gap-4 min-[964px]:grid-cols-2 min-[1068px]:grid-cols-3'>
