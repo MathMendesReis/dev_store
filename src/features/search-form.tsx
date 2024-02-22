@@ -12,9 +12,6 @@ export function SearchForm() {
     const formData = new FormData(event.currentTarget)
     const data = Object.fromEntries(formData)
     const query = data.q
-    if (!query) {
-      return null
-    }
     router.push(`/search?q=${query}`)
   }
   return (
