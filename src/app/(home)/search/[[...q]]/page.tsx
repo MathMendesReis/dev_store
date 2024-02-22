@@ -1,15 +1,29 @@
+'use client'
 import ListProducts from '@/features/list-products'
+import { produto } from '@/mock/fecth'
 import { searchProducts } from '@/mock/search-product'
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 
 interface SearchProps {
   searchParams: {
     q: string
   }
 }
-export default async function Search({ searchParams }: SearchProps) {
+export default function Search({ searchParams }: SearchProps) {
   const { q: query } = searchParams
-  const data = await searchProducts(query)
+  const [data, setData] = useState<produto[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const searchData = await searchProducts(query)
+      setData(searchData)
+    }
+    fetchData()
+  }, [query])
+
+  if (!data) {
+    return <p>Loading feed...</p>
+  }
   return (
     <div className='flex w-full flex-col gap-4'>
       <p className='text-sm'>
