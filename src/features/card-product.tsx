@@ -35,7 +35,7 @@ function CardProductImg({
       width={height}
       height={width}
       quality={100}
-      className='relative bottom-0 object-contain transition duration-300 ease-in-out group-hover:scale-105'
+      className='object-contain transition duration-300 ease-in-out group-hover:scale-105'
     />
   )
 }

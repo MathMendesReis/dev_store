@@ -34,7 +34,7 @@ export default function Product({ params }: ProductProps) {
     setMainImage(newImage)
   }
   return (
-    <div className='mt-10'>
+    <main className='mt-10 min-h-screen w-full'>
       {product && (
         <CardProductRoot className='flex flex-wrap'>
           <CardProductImg src={mainImage} />
@@ -71,12 +71,14 @@ export default function Product({ params }: ProductProps) {
             <div className='mb-[30%] mt-auto w-11/12'>
               <button className='flex w-full items-center justify-center gap-2 rounded-2xl bg-green-700/90 px-3 py-3 transition-all hover:bg-green-700'>
                 <WhatsappLogo fill='white' />
-                <span>chame no whatsapp</span>
+                <span className='text-sm font-extrabold text-gray-100'>
+                  chame no whatsapp
+                </span>
               </button>
             </div>
           </div>
         </CardProductRoot>
       )}
-    </div>
+    </main>
   )
 }
